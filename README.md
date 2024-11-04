@@ -7,3 +7,5 @@ Keep in mind that you have to install the Discord Library With:
 'Pip install discord'
 
 I also recommend placing the API KEY on anther .py file and importing it to the main one
+
+I've also explained some of the commands used on the file.
