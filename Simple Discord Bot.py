@@ -1,17 +1,17 @@
 import discord
 from discord.ext import commands
 
-intents = discord.Intent.default()
+intents = discord.Intents.default()
 intents.messages = True
 bot = commands.Bot(command_prefix='!', intents = discord.Intents.all())
 
 #Bot Ready Comment
 @bot.event
-async def on_ready()     #Syncs the bot
+async def on_ready():     #Syncs the bot
     print("Bot is ready")
     try:
-        synced = await bot.tree.sync()          #Syncs the Commands to the bot
-        print(f"{len(synced)} commands synchronized)
+        synced = await bot.tree.sync()
+        print(f"Sincronizando {len(synced)} de los comandos")
     except Exception as e:
         print(e)
         
@@ -19,7 +19,7 @@ async def on_ready()     #Syncs the bot
 #Messages
 @bot.event
 async def on_message(msg):
-    if msg.author == bot.user
+    if msg.author == bot.user:
         return
     if msg.content.lower() == "Hello":           #content.lower = It registers the message even if it starts with a capital letter
         await msg.reply("Hello :3")
@@ -30,7 +30,7 @@ async def on_message(msg):
 #Commands
 @bot.tree.command(name="hello", description= "say hello to the bot")
 async def hello(interaction: discord.Interaction):
-    await interaction.response.send_message(f"Hello! {interaction.user.mention},
+    await interaction.response.send_message(f"Hello! {interaction.user.mention}",
     ephemeral= True)
 #{interaction.user.mention} = Mentions the User |  ephemeral= True = Only the User that used the command can see the message
         
