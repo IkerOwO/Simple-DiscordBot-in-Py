@@ -36,5 +36,5 @@ async def hello(interaction: discord.Interaction):
         
 
 
-#Use your API KEY :3 | I recommend putting the API KEY on another .py and importing it to this one
+#Use your API KEY :3 | I recommend putting the API KEY on an .env file and importing it to this one
 bot.run('YOUR API KEY')
